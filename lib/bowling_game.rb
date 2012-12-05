@@ -28,6 +28,10 @@ class BowlingGame
   def bare_score idx
     throw = self.throws[idx]
     return 10 if strike?(throw)
+    if spare?(throw)
+      previous_score = bare_score(idx - 1)
+      return 10 - previous_score
+    end
     throw.to_i
   end
 

@@ -30,4 +30,9 @@ describe BowlingGame do
       it { should eql 26 }
     end
   end
+
+  describe "strike, spare combination" do
+    let(:score_string) { "X4/----------------" }
+    it { should eql 30 }
+  end
 end
