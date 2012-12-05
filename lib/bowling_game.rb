@@ -6,13 +6,13 @@ class BowlingGame
   end
 
   def score
-    total = 0
+    score_chart.inject(:+)
+  end
 
-    throws.each_with_index do |throw, idx|
-      total += throw_score throw, idx
+  def score_chart
+    throws.each_with_index.map do |throw, idx|
+      throw_score throw, idx
     end
-
-    total
   end
 
   def throw_score throw, idx
