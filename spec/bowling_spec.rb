@@ -35,4 +35,10 @@ describe BowlingGame do
     let(:score_string) { "X4/----------------" }
     it { should eql 30 }
   end
+
+  describe "full complex examples", "from http://bowling.about.com/od/rulesofthegame/a/bowlingscoring.htm" do
+    before { pending('figure out how you can detect the bonus score') }
+    let(:score_string) { "X7/729/XXX236/7/3" }
+    it { should eql 168 }
+  end
 end
